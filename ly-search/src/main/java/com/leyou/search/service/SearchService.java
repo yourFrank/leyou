@@ -95,7 +95,7 @@ public class SearchService {
             skus.add(map);
         }
 
-        //规格参数（存在两个表，key在spu_param,value在spu_detail）
+//        规格参数（存在两个表，key在spu_param,value在spu_detail）
         Map<String,Object> specMap=new HashMap<>();
         List<SpecParam> specParams = specClient.querySpecParamByGroupId(null, spu.getCid3(), true);
         if(CollectionUtils.isEmpty(specParams)){
