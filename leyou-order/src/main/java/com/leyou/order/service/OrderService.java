@@ -133,4 +133,15 @@ public class OrderService {
     }
 
 
+    /**
+     * 通过orderId删除订单
+     * @param orderId
+     */
+    public void deleteOrder(Long orderId) {
+        orderMapper.deleteByPrimaryKey(orderId);
+        statusMapper.deleteByPrimaryKey(orderId);
+        OrderDetail orderDetail = new OrderDetail();
+        orderDetail.setOrderId(orderId);
+        detailMapper.delete(orderDetail);
+    }
 }

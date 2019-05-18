@@ -155,5 +155,10 @@ public class OrderController {
         return ResponseEntity.ok(payState.getValue());
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void>  deleteOrder(@PathVariable("id") Long orderId){
+        orderService.deleteOrder(orderId);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 
 }
